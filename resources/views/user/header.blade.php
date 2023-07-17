@@ -77,7 +77,7 @@
 
                                 <!-- Wishlist -->
                                 <div>
-                                    <a href="#">
+                                    <a href="{{ url('/all-wishlist') }}">
                                         <i class="fa fa-heart-o"></i>
                                         <span>Your Wishlist</span>
                                         <div class="qty">2</div>
@@ -103,9 +103,9 @@
                                     <div class="cart-dropdown">
 
 
-                                        @foreach ($carts as $cart)
+                                       
                                             <div class="cart-list">
-
+                                                @foreach ($carts as $cart)
                                                 <div class="product-widget">
                                                     <div class="product-img">
                                                         <img src="{{ asset('/image/' . $cart->image) }}" alt="">
@@ -114,7 +114,7 @@
                                                         <h3 class="product-name"><a
                                                                 href="{{ url('/product-details/' . $cart->product_id) }}">{{ $cart->product_name }}</a></h3>
                                                         <h4 class="product-price"><span
-                                                                class="qty">{{ $cart->quantity }}</span>Tk.{{ $cart->price }}
+                                                                class="qty">{{ $cart->quantity }}X</span> {{ $cart->price }}
                                                         </h4>
                                                     </div>
                                                     <div>
@@ -126,8 +126,9 @@
 
                                                     </div>
                                                 </div>
+                                                @endforeach
                                             </div>
-                                        @endforeach
+                                     
 
                                                 <?php
                                                 $totalitem = 0;

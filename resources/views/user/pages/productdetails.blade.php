@@ -28,25 +28,7 @@
                     <!-- Product thumb imgs -->
                     <div class="col-md-2  col-md-pull-5">
                         <div id="product-imgs">
-                            <div class="product-preview">
-                                <img name="image"
-                                    src="{{ asset('./images/color/202305131644photo-1581362716668-90cdec6b4882.jpg') }}">
-                            </div>
-
-                            <div class="product-preview">
-                                <img name="image"
-                                    src="{{ asset('./images/color/202305131644photo-1581362716668-90cdec6b4882.jpg') }}">
-                            </div>
-
-                            <div class="product-preview">
-                                <img name="image"
-                                    src="{{ asset('./images/color/202305131644photo-1581362716668-90cdec6b4882.jpg') }}">
-                            </div>
-
-                            <div class="product-preview">
-                                <img name="image"
-                                    src="{{ asset('./images/color/202305141203medium1648720986LHrPr31204.png') }}">
-                            </div>
+                         
                         </div>
                     </div>
                     <!-- /Product thumb imgs -->
