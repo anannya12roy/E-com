@@ -31,16 +31,21 @@ class SizeController extends Controller
     }
 
     public function edit($id){
+
+        
         $size = Size::find($id);
         return view('admin.size.edit',compact('size'));
     }
 
     public function update(Request $request, $id){
        
+        
+        $sizes = explode(',',$request->name); 
         $size= Size::where('id',$id)->update([
-                'name' => $request->name,
+                'name' =>  json_encode($sizes),
             ]);
-            return redirect()->back();
+
+         return redirect()->back();
     }
 
     public function destroy($id){

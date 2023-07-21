@@ -12,7 +12,7 @@
             @csrf
           <div class="form-group">
             <label for="exampleInputName1">Name</label>
-            <input type="text" class="form-control" name="name" data-role="tagsinput"  value="{{$size->name}}" >
+            <input type="text" class="form-control" name="name" data-role="tagsinput"  value="{{implode(',',Json_decode($size->name))}}" >
            
           </div>
  

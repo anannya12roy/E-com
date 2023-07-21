@@ -25,7 +25,13 @@
                         {{$size->id}}
                     </td>
                     <td>
-                        {{$size->name}}
+                      @foreach(json_decode($size->name) as $sizes)
+
+                      <ul class="span3">
+                          {{$sizes}}
+                      </ul>
+
+                      @endforeach
                     </td>
                    
                     <td>
