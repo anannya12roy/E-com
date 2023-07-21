@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Cart;
 use App\Models\Size;
 use App\Models\Color;
+use App\Models\Wishlist;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -55,12 +56,14 @@ class ProductdetailsController extends Controller
         if(Auth::user()){
             $user_id = Auth::user()->id;
             $carts = Cart::where('user_id', $user_id )->get();
+            $wishlists = Wishlist::where('user_id', $user_id)->count();
         }else{
             $users_id = Auth::user();
             $carts = Cart::where('user_id', $users_id )->get();
+            $wishlists = Wishlist::where('user_id', $users_id)->count();
         }
 
 
-        return view('user.pages.productdetails',compact('products','setting','categories', 'carts','sizes'));
+        return view('user.pages.productdetails',compact('products','setting','categories', 'carts','sizes', 'wishlists'));
     }
 }

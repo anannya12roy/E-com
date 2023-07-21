@@ -28,12 +28,12 @@ class WishlistController extends Controller
                 $wishlist = new Wishlist;
                 $wishlist->user_id =  $user->id;
                 $wishlist->product_id = $product->id;
-    
+
                 $wishlist->save();
-    
+
                 return redirect()->back();
             }
-           
+
         }else{
             return redirect('login');
         }
@@ -57,9 +57,16 @@ class WishlistController extends Controller
         $loggedinUser = Auth::user()->id;
         // dd($loggedinUser);
     $wishlistData = Wishlist::where('user_id', $loggedinUser)->with(['product','user'])->get();
+    $wishlists = Wishlist::where('user_id', $loggedinUser)->count();
         // dd($wishlistData);
 
-        return view('user.pages.wishlist',compact('categories', 'setting','carts','wishlistData'));
+        return view('user.pages.wishlist',compact('categories', 'setting','carts','wishlistData', 'wishlists'));
+    }
+
+    public function wishlist_delete($id){
+        $wishlist = Wishlist::find($id);
+        $wishlist->delete();
+        return redirect()->back();
     }
 
 }
