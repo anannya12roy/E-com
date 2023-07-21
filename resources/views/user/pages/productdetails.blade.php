@@ -59,7 +59,7 @@
                                 <span class="product-available">In Stock</span>
 
                             </div>
-                            <p>{{ $products->description }}</p>
+                            <ul>{!! $products->description !!}</ul>
 
                             <div class="product-options">
                                 <label>Size:

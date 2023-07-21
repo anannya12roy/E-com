@@ -62,13 +62,18 @@
 
             </div>
 
-            <div class="form-group">
+            {{-- <div class="form-group">
                 <label for="">Description</label>
                 <textarea class="form-control" name="description" id="exampleTextarea1" rows="4">{{$product->description}}</textarea>
                 @error('description')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
-            </div>
+            </div> --}}
+
+            <div class="form-group">
+              <label for="exampleInputName1"><b>Second Description :</b></label>
+              <textarea type="text" id="editor" class="form-control" name="description" value="">{{$product->description}}</textarea>
+          </div>
 
           <div class="form-group">
             <label>Image</label>

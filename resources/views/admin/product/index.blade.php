@@ -49,7 +49,7 @@
                                     </td>
                                     <td> {{ $product->price }}</td>
                                     <td> {{ $product->discount_price }}</td>
-                                    <td>{{ $product->description }}</td>
+                                    <td>{!! $product->description !!}</td>
                                     <td>
                                         @foreach ($product->image as $images)
                                             <img src="{{ asset('/image/' . $images) }}" style="width: 80px;height:80px ;">
