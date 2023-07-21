@@ -57,7 +57,7 @@ Route::get('/backend-admin', [AdminController::class, 'form']);
 Route::post('/backend-check', [AdminController::class, 'login']);
 
 // Route::group(['middleware' => 'auth'], function () {
-    //add more Routes here
+//     add more Routes here
     Route::get('/dashboard', [AdminController::class, 'dashboard']);
     Route::get('/subscribe', [AdminController::class, 'subscribe']);
     Route::post('/delete_subscribe/{id}', [AdminController::class, 'subs_delete']);
