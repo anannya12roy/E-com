@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Cart;
 use App\Models\Category;
 use App\Models\User;
+use App\Models\Wishlist;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,8 +19,10 @@ class ProfileController extends Controller
         if(Auth::user()){
             $user_id = Auth::user()->id;
             $profile = User::where('id', $user_id )->first();
+            $wishlists = Wishlist::where('user_id', $user_id)->count();
         }else{
             $users_id = Auth::user();
+            $wishlists = Wishlist::where('user_id', $users_id)->count();
         }
         $categories = Category::all();
         $carts= Cart::all();
@@ -35,7 +38,7 @@ class ProfileController extends Controller
             'setting' => $setting ,
         ];
 
-        return view('user.profile.profile',compact('setting', 'carts', 'categories'));
+        return view('user.profile.profile',compact('setting', 'carts', 'categories', 'wishlists'));
     }
 
     public function profile_update(Request $request)
@@ -52,12 +55,14 @@ class ProfileController extends Controller
 
     public function orders()
     {
-        
+
         if(Auth::user()){
             $user_id = Auth::user()->id;
             $profile = User::where('id', $user_id )->first();
+            $wishlists = Wishlist::where('user_id', $user_id)->count();
         }else{
             $users_id = Auth::user();
+            $wishlists = Wishlist::where('user_id', $users_id)->count();
         }
         $categories = Category::all();
         $carts= Cart::all();
@@ -74,7 +79,7 @@ class ProfileController extends Controller
         ] ;
         $user = Auth::user()->id;
         $orderlists = Order::where('user_id',$user)->get();
-        return view('user.profile.orders',compact('orderlists','setting', 'carts', 'categories'));
+        return view('user.profile.orders',compact('orderlists','setting', 'carts', 'categories', 'wishlists'));
     }
 
     public function bill_add(){

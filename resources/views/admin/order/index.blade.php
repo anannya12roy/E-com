@@ -64,7 +64,7 @@
                 <td>{{ $order->email }}</td>
                 <td>{{ $order->zip_code }}</td>
                 <td>{{ $order->product_name }}</td>
-                <td>{{ $order->quantity }}</td>
+                <td>{{ $order->qty }}</td>
                 <td>{{ $order->size }}</td>
                 <td>{{ $order->color }}</td>
                 <td>{{ $order->total_price }}</td>
@@ -73,7 +73,7 @@
                 <td>{{ $order->payment_status }}</td>
                 <td>
                   @if ($order->delivery_status == 'processing')
-                  <a href="{{url('/order-synced/'.$order->id)}}" onclick="return confirm('Are you sure to cancel this product?')" class="btn btn-info btn-sm">Sync</a>
+                  <a href="{{url('/order-synced/'.$order->id)}}" onclick="return confirm('Are you sure to sync this product?')" class="btn btn-info btn-sm">Sync</a>
 
                   <a href="{{url('/order-update/'.$order->id)}}" onclick="return confirm('Are you sure this product is delivered?')" class="btn btn-success btn-sm">Deliverd</a>
 

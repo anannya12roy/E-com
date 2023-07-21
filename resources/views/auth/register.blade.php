@@ -26,6 +26,7 @@
                             required autocomplete="new-password" />
 
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                <p>password must have 8 digits</p>
         </div>
 
         <!-- Confirm Password -->
