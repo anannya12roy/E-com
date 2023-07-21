@@ -7,22 +7,27 @@
         <p class="card-description">
             Please fill out the form below.
         </p>
-    
+
         <form action="{{url('/update-category/'.$category->id)}}" method="POST" class="forms-sample">
             @csrf
           <div class="form-group">
             <label for="exampleInputName1">Name</label>
             <input type="text" class="form-control" name="name"  value="{{$category->name}}" >
-           
+
           </div>
- 
+          <div class="form-group">
+            <label for="exampleInputName1"><b>Old Image :</b?< /label>
+                    <td>
+                        <img width="150px" height="100px" src="{{ asset('images/color' . '/' . $color->image) }}">
+                    </td>
+        </div>
           <div class="form-group">
             <label for="exampleTextarea1">Description</label>
             <textarea class="form-control" name="description"  rows="4" >{{$category->description}}</textarea>
-           
+
           </div>
           <button type="submit" class="btn btn-primary me-2">Submit</button>
-         
+
         </form>
       </div>
     </div>
