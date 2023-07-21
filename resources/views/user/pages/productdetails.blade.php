@@ -37,16 +37,7 @@
                     <div class="col-md-5">
                         <div class="product-details">
                             <h2 class="product-name">{{ $products->name }}</h2>
-                            {{-- <div>
-                            <div class="product-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-o"></i>
-                            </div>
-                            <a class="review-link" href="#">10 Review(s) | Add your review</a>
-                        </div>  --}}
+                     
                             <div>
                                 @if ($products->discount_price)
                                     <h3 class="product-price" name="price"><b>
@@ -110,13 +101,7 @@
                                 <li><a href="#"><b>{{ $products->category }}</b></a></b></li>
                             </ul>
 
-                            {{--  <ul class="product-links">
-                            <li>Share:</li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="#"><i class="fa fa-envelope"></i></a></li>
-                        </ul>  --}}
+                          
 
                         </div>
                     </div>
