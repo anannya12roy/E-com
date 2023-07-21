@@ -33,10 +33,10 @@
                             <input type="text" id="bill_name" value="{{Auth::user()->name}}" placeholder="Enter full name" name="name" required style="width: 95%;margin-bottom:5px;padding:10px 15px; border-radius: 15px; border:1px solid black;"/>
                             <input type="email" id="bill_email" value="{{Auth::user()->email}}"placeholder="Enter email address" name="email" required style="width: 95%;margin-bottom:5px;padding:10px 15px; border-radius: 15px; border:1px solid black;"/>
                             <input type="text"  id="bill_phone"value="{{Auth::user()->phone}}" placeholder="Enter phone number" name="phone" required style="width: 95%;margin-bottom:5px;padding:10px 15px; border-radius: 15px; border:1px solid black;" />
-                            <input type="text"  id="bill_add" value="{{Auth::user()->phone}}"placeholder="Enter shipping address (House no.,Street,area)" name="address" required style="width: 95%;margin-bottom:5px;padding:10px 15px; border-radius: 15px; border:1px solid black;"/>
-                            <input type="text" id="bill_city"value="{{Auth::user()->phone}}" placeholder="Enter city" name="city" required style="width: 95%;margin-bottom:5px;padding:10px 15px; border-radius: 15px; border:1px solid black;"/>
-                            <input type="text" id="bill_district" value="{{Auth::user()->phone}}" placeholder="Enter district" name="district" required style="width: 95%;margin-bottom:5px;padding:10px 15px; border-radius: 15px; border:1px solid black;"/>
-                            <input type="text" id="bill_zip"value="{{Auth::user()->phone}}" placeholder="Enter zip code" name="zip" required style="width: 95%;margin-bottom:5px;padding:10px 15px; border-radius: 15px; border:1px solid black;"/>
+                            <input type="text"  id="bill_add" value="{{Auth::user()->address}}"placeholder="Enter shipping address (House no.,Street,area)" name="address" required style="width: 95%;margin-bottom:5px;padding:10px 15px; border-radius: 15px; border:1px solid black;"/>
+                            <input type="text" id="bill_city"value="{{Auth::user()->city}}" placeholder="Enter city" name="city" required style="width: 95%;margin-bottom:5px;padding:10px 15px; border-radius: 15px; border:1px solid black;"/>
+                            <input type="text" id="bill_district" value="{{Auth::user()->district}}" placeholder="Enter district" name="district" required style="width: 95%;margin-bottom:5px;padding:10px 15px; border-radius: 15px; border:1px solid black;"/>
+                            <input type="text" id="bill_zip"value="{{Auth::user()->zip_code}}" placeholder="Enter zip code" name="zip" required style="width: 95%;margin-bottom:5px;padding:10px 15px; border-radius: 15px; border:1px solid black;"/>
                        <div class="col-md-12 row">
                         <div class="">
 

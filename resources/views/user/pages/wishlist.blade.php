@@ -18,7 +18,7 @@
     <div class="col-md-9" >
 
 
-<h4 style="margin-top: 10px;">{{Auth::user()->name}} Your Cart Item  </h4>
+<h4 style="margin-top: 10px;">{{Auth::user()->name}} Your Wishlist Item  </h4>
     <table style="margin-top: 5%;" class="table table-bordered">
         <thead>
           <tr>

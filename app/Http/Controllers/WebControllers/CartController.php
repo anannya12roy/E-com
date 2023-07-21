@@ -9,6 +9,7 @@ use App\Models\Cart;
 use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Setting;
+use App\Models\Wishlist;
 use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -113,15 +114,17 @@ class CartController extends Controller
         if(Auth::user()){
             $user_id = Auth::user()->id;
             $carts = Cart::where('user_id', $user_id )->get();
+            $wishlists = Wishlist::where('user_id', $user_id)->count();
         }else{
             $users_id = Auth::user();
             $carts = Cart::where('user_id', $users_id )->get();
+            $wishlists = Wishlist::where('user_id', $users_id)->count();
         }
         $settings = DB::table('settings')->get() ;
         $setting = array();
         foreach ($settings as $key => $value) {
             $setting[$value->name] = $value->value;
         }
-        return view('user.pages.view_cart',compact('categories', 'setting','carts'));
+        return view('user.pages.view_cart',compact('categories', 'setting','carts', 'wishlists'));
     }
 }

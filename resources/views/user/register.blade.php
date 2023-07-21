@@ -63,10 +63,11 @@
                           <i class="mdi mdi-lock-outline text-primary"></i>
                         </span>
                       </div>
-                      <input type="password" name="password" class="form-control form-control-lg border-left-0" id="exampleInputPassword" placeholder="Password">                        
+                      <input type="password" name="password" class="form-control form-control-lg border-left-0" id="exampleInputPassword" placeholder="Password">
                     </div>
+                    <p>* password must have minimum 8 digits</p>
                   </div>
-                
+
                 <div class="form-group">
                   <label>Confirm Password</label>
                   <div class="input-group">
@@ -75,7 +76,7 @@
                         <i class="mdi mdi-lock-outline text-primary"></i>
                       </span>
                     </div>
-                    <input type="password" name="password_confirmation" class="form-control form-control-lg border-left-0" id="exampleInputPassword" placeholder="Password">                        
+                    <input type="password" name="password_confirmation" class="form-control form-control-lg border-left-0" id="exampleInputPassword" placeholder="Password">
                   </div>
                 </div>
                 <div class="mb-4">
@@ -87,7 +88,7 @@
                   </div>
                 </div>
                 <div class="mt-3">
-                  
+
                   <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" >SIGN UP</button>
                 </div>
                 <div class="text-center mt-4 font-weight-light">

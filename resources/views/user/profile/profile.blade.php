@@ -100,7 +100,7 @@
 
                 <div class="form-group ">
                     <label style="font-weight: 500; font-size:medium;" for="exampleInputEmail2">Phone</label><br>
-                    <input size="45" style="border:1px solid black; width:100%; border-radius:5px;" name="phone" type="text" class="form-control" id="exampleInputEmail2" value="{{Auth::user()->phone}}" placeholder="jane.doe@example.com">
+                    <input size="45" style="border:1px solid black; width:100%; border-radius:5px;" name="phone" type="text" class="form-control" id="exampleInputEmail2" value="{{Auth::user()->phone}}" placeholder="enter your phone number">
                 </div>
 
                 <div class="form-group ">

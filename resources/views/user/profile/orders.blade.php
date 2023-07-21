@@ -64,7 +64,7 @@
                 @if($orderlist->delivery_status == 'processing')
                 <a href="{{url('/order-cancel/'.$orderlist->id)}}" onclick=" confirmation(event)" class="btn btn-danger">Cancel Order</a>
                 @else
-                <h5>Nothing to action</h5>
+                <h5></h5>
                 @endif
             </td>
           </tr>

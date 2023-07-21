@@ -28,7 +28,7 @@
                     <!-- Product thumb imgs -->
                     <div class="col-md-2  col-md-pull-5">
                         <div id="product-imgs">
-                         
+
                         </div>
                     </div>
                     <!-- /Product thumb imgs -->
@@ -37,7 +37,7 @@
                     <div class="col-md-5">
                         <div class="product-details">
                             <h2 class="product-name">{{ $products->name }}</h2>
-                     
+
                             <div>
                                 @if ($products->discount_price)
                                     <h3 class="product-price" name="price"><b>
@@ -47,7 +47,7 @@
                                     <h3 class="product-price" name="price"><b>
                                             &#2547; {{ $products->price }}</b></h3>
                                 @endif
-                                <span class="product-available">In Stock</span>
+                            
 
                             </div>
                             <ul>{!! $products->description !!}</ul>
@@ -101,7 +101,7 @@
                                 <li><a href="#"><b>{{ $products->category }}</b></a></b></li>
                             </ul>
 
-                          
+
 
                         </div>
                     </div>

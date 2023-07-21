@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\Cart;
+use App\Models\Wishlist;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
@@ -20,9 +21,11 @@ class AllproductController extends Controller
         if(Auth::user()){
             $user_id = Auth::user()->id;
             $carts = Cart::where('user_id', $user_id )->get();
+            $wishlists = Wishlist::where('user_id', $user_id)->count();
         }else{
             $users_id = Auth::user();
             $carts = Cart::where('user_id', $users_id )->get();
+            $wishlists = Wishlist::where('user_id', $users_id)->count();
         }
         $settings = DB::table('settings')->get() ;
         $setting = array();
@@ -39,6 +42,6 @@ class AllproductController extends Controller
         $routeName = $name;
 
         $hotdeal = Product::where('hot_deal',1)->get();
-        return view('user.pages.product_by_cat',compact('categories','products','carts', 'hotdeal','setting', 'routeName'));
+        return view('user.pages.product_by_cat',compact('categories','products','carts', 'hotdeal','setting', 'routeName', 'wishlists'));
     }
 }
