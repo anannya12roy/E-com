@@ -50,7 +50,7 @@
             </th>
             <td><img name="image" style="height: auto; width: 70px"
                 src="{{ asset('/image/' . $cart->image) }}"></td>
-            <td>{{  $cart->price}}</td>
+            <td>{{  $cart->base_price}}</td>
             <td>{{  $cart->discount_price}}</td>
             <td>{{ $cart->quantity}}</td>
             <td>{{ $cart->total_price}}</td>

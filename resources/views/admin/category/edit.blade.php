@@ -15,12 +15,7 @@
             <input type="text" class="form-control" name="name"  value="{{$category->name}}" >
 
           </div>
-          <div class="form-group">
-            <label for="exampleInputName1"><b>Old Image :</b?< /label>
-                    <td>
-                        <img width="150px" height="100px" src="{{ asset('images/color' . '/' . $color->image) }}">
-                    </td>
-        </div>
+        
           <div class="form-group">
             <label for="exampleTextarea1">Description</label>
             <textarea class="form-control" name="description"  rows="4" >{{$category->description}}</textarea>
