@@ -58,6 +58,7 @@ class UserController extends Controller
     public function frontpage(){
 
         $categories = Category::all();
+       
         $hotdeals = Hotdeal::all();
         $hotdeal = Product::where('hot_deal',1)->get();
 

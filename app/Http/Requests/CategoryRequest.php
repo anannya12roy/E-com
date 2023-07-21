@@ -25,16 +25,17 @@ class CategoryRequest extends FormRequest
     {
         return [
             'name' => 'required|unique:categories,name',
+            'image' => 'required',
             'description' => 'required',
         ];
     }
 
     public function messages()
     {
-        return [ 
+        return [
             'name.exist' => '',
             'name.reuired' => 'Category name is required!',
-           
+            'image.reuired' => 'Category image is required!',
             'description.reuired' => 'Description is required!',
         ];
     }

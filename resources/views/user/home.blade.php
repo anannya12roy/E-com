@@ -18,7 +18,7 @@
 			<div class="col-md-4 col-xs-6">
 				<div class="shop">
 					<div class="shop-img">
-						<img src="./user/img/shop01.png" alt="">
+						<img src="{{ asset('images/category' . '/' . $category->image) }}" alt="">
 					</div>
 					<div class="shop-body">
 						<h3>{{$category->name}}<br>Collection</h3>

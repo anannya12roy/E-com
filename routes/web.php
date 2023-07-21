@@ -62,7 +62,7 @@ Route::post('/backend-check', [AdminController::class, 'login']);
     Route::get('/subscribe', [AdminController::class, 'subscribe']);
     Route::post('/delete_subscribe/{id}', [AdminController::class, 'subs_delete']);
     //category
-    Route::get('/category', [CategoryController::class, 'create']);
+    Route::get('/category', [CategoryController::class, 'create'])->name('admin.category');
     Route::post('/store-category', [CategoryController::class, 'store']);
     Route::get('/all-category', [CategoryController::class, 'index']);
     Route::get('/edit-category/{id}', [CategoryController::class, 'edit']);

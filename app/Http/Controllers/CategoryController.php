@@ -15,15 +15,29 @@ class CategoryController extends Controller
         return view('admin.category.create');
     }
 
-    public function store(CategoryRequest $request){
-        $request->validated();
-        $category= Category::create([
-            'name' => $request->name,
-            'description' => $request->description,
+    public function store(Request $request){
+        $data = $this->validate($request, [
+            'name' => 'required',
+            'image' => 'required',
+            'description' => 'sometimes'
         ]);
-        return redirect()->back();
-    }
+        $uploadPath = 'category';
+            if ($request->file('image')) {
+                $file = $request->file('image');
+                $filename = date('YmdHi') . $file->getClientOriginalName();
+                $file->move(public_path('images/category'), $filename);
+                $data['image'] = $filename;
 
+                if (Category::create($data)) {
+                    return redirect()->route('admin.category')
+                        ->with('alert', [
+                            'type' => 'success',
+                            'message' => 'Updated',
+                        ]);
+                }
+
+            }
+    }
     public function index(){
 
         $categories = Category::all();
@@ -36,9 +50,10 @@ class CategoryController extends Controller
     }
 
     public function update(Request $request, $id){
-       
+
         $category= Category::where('id',$id)->update([
                 'name' => $request->name,
+                'image' => $request->name,
                 'description' => $request->description,
             ]);
             return redirect()->back();
@@ -47,7 +62,7 @@ class CategoryController extends Controller
     public function destroy($id){
         $category = Category::find($id);
         $category->delete();
-       
+
         return redirect()->back();
     }
 
