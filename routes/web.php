@@ -56,7 +56,7 @@ Route::get('/page', [PageController::class, 'index'])->name('page');
 Route::get('/backend-admin', [AdminController::class, 'form']);
 Route::post('/backend-check', [AdminController::class, 'login']);
 
-Route::group(['middleware' => 'auth'], function () {
+// Route::group(['middleware' => 'auth'], function () {
     //add more Routes here
     Route::get('/dashboard', [AdminController::class, 'dashboard']);
     Route::get('/subscribe', [AdminController::class, 'subscribe']);
@@ -149,6 +149,7 @@ Route::group(['middleware' => 'auth'], function () {
 //wishlist
 Route::post('/wishlist/{id}', [WishlistController::class, 'add_wishlist']);
 Route::get('/all-wishlist', [WishlistController::class, 'all_wishlist']);
-});
+Route::get('/delete_wishlist/{id}', [WishlistController::class, 'wishlist_delete']);
+// });
 Route::get('/logout', [AdminController::class,'logout']);
 Route::get('/search-product/{name}', [AllproductController::class, 'search_ranges'])->name('search');

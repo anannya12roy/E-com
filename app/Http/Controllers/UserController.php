@@ -11,6 +11,7 @@ use DB;
 use Illuminate\Http\Request;
 
 use App\Models\Category;
+use App\Models\Wishlist;
 // use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -61,9 +62,12 @@ class UserController extends Controller
         if(Auth::user()){
             $user_id = Auth::user()->id;
             $carts = Cart::where('user_id', $user_id )->get();
+            $wishlists = Wishlist::where('user_id', $user_id)->count();
         }else{
             $users_id = Auth::user();
             $carts = Cart::where('user_id', $users_id )->get();
+            $wishlists = Wishlist::where('user_id', $users_id)->count();
+
         }
 
         $products = DB::table('products')
@@ -104,9 +108,9 @@ class UserController extends Controller
         // $topsell = Order::where('order_id','qty')->count();
         // dd($topsell);
         // $topsell = Order::where('product_id','qty')->count('product_id','qty');
-        // dd($topsell);
+        // dd($carts);
 
-        return view('user.home',compact('categories','hotdeals','hotdeal', 'carts', 'setting', 'products','topsell'));
+        return view('user.home',compact('categories','hotdeals','hotdeal', 'carts','wishlists', 'setting', 'products','topsell'));
 
 
 

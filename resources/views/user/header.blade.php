@@ -80,7 +80,9 @@
                                     <a href="{{ url('/all-wishlist') }}">
                                         <i class="fa fa-heart-o"></i>
                                         <span>Your Wishlist</span>
-                                        <div class="qty">2</div>
+
+
+                                        <div class="qty">{{ $wishlists }}</div>
                                     </a>
                                 </div>
                                 <!-- /Wishlist -->
@@ -103,7 +105,7 @@
                                     <div class="cart-dropdown">
 
 
-                                       
+
                                             <div class="cart-list">
                                                 @foreach ($carts as $cart)
                                                 <div class="product-widget">
@@ -128,7 +130,7 @@
                                                 </div>
                                                 @endforeach
                                             </div>
-                                     
+
 
                                                 <?php
                                                 $totalitem = 0;
