@@ -124,9 +124,11 @@ class UserController extends Controller
         if(Auth::user()){
             $user_id = Auth::user()->id;
             $carts = Cart::where('user_id', $user_id )->get();
+            $wishlists = Wishlist::where('user_id', $user_id)->count();
         }else{
             $users_id = Auth::user();
             $carts = Cart::where('user_id', $users_id )->get();
+            $wishlists = Wishlist::where('user_id', $user_id)->count();
         }
         $settings = DB::table('settings')->get() ;
         $setting = array();
@@ -143,7 +145,7 @@ class UserController extends Controller
         // $routeName = $name;
 
         // $hotdeal = Product::where('hot_deal',1)->get();
-        return view('user.pages.hotdeal_product',compact('categories','products','carts', 'setting'));
+        return view('user.pages.hotdeal_product',compact('categories','products','carts', 'setting', 'wishlists'));
     }
 
 }

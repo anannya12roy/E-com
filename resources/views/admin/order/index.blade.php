@@ -48,7 +48,9 @@
           </thead>
 
           <tbody>
+
             @forelse ($orders as $order)
+
             @php
                 $order['image'] = explode('|',$order->image);
                 $images = $order->image[0];
@@ -58,7 +60,7 @@
                 <th scope="row">{{ $order->id }}</th>
                 <td>{{ $order->name }}</td>
                 <td>{{ $order->phone }}</td>
-                <td>{{ $order->address }}</td>
+                <td>{{ $order->address }}, {{ $order->city }} , {{ $order->district }}</td>
                 <td>{{ $order->email }}</td>
                 <td>{{ $order->zip_code }}</td>
                 <td>{{ $order->product_name }}</td>
