@@ -58,7 +58,7 @@ class UserController extends Controller
     public function frontpage(){
 
         $categories = Category::all();
-       
+
         $hotdeals = Hotdeal::all();
         $hotdeal = Product::where('hot_deal',1)->get();
 
@@ -131,7 +131,7 @@ class UserController extends Controller
         }else{
             $users_id = Auth::user();
             $carts = Cart::where('user_id', $users_id )->get();
-            $wishlists = Wishlist::where('user_id', $user_id)->count();
+            $wishlists = Wishlist::where('user_id', $users_id)->count();
         }
         $settings = DB::table('settings')->get() ;
         $setting = array();
