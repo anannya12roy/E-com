@@ -7,7 +7,7 @@
             <ul class="header-links pull-left">
                 <li><a href="#"><i class="fa fa-phone"></i>{{ $setting['phn'] }}</a></li>
                 <li><a href="#"><i class="fa fa-envelope-o"></i>{{ $setting['email'] }}</a></li>
-                <li><a href="#"><i class="fa fa-map-marker"></i>{{ $setting['location'] }}</a></li>
+                <li><a href="{{ $setting['location'] }}"><i class="fa fa-map-marker"></i>location</a></li>
             </ul>
             <ul class="header-links pull-right">
 

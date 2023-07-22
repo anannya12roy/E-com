@@ -15,21 +15,21 @@
         body{
             padding-top:200px;
             background-color: black;
-        
+
         }
     </style>
   </head>
   <body>
-  
+
     <div class="container">
-       
+
         <div class="row">
-         
+
             <div class="col-md-4 col-md-offset-4">
                 <div class="panel panel-default">
-                  
+
                       <div class="panel-heading">
-                        <h3 class="panel-title">Potu sign in</h3>
+                        <h3 class="panel-title">Admin sign in</h3>
                      </div>
                       <div class="panel-body">
                         <form action="{{url('/backend-check')}}" method="post">
@@ -41,7 +41,7 @@
                             <div class="form-group">
                                 <input class="form-control" type="password" placeholder="Password" name="password" type="password" value="">
                             </div>
-                           
+
                             <button class="btn btn-lg btn-success btn-block" type="submit" >Login</button>
                         </fieldset>
                           </form>
