@@ -10,7 +10,7 @@
                         <h3 class="footer-title">Contact Us</h3>
                         <p>{{ $setting['description']}}</p>
                         <ul class="footer-links">
-                            <li><a href="#"><i class="fa fa-map-marker"></i>{{ $setting['location']}}</a></li>
+                            <li><a href="{{ $setting['location']}}"><i class="fa fa-map-marker"></i>location</a></li>
                             <li><a href="#"><i class="fa fa-phone"></i>{{ $setting['phn']}}</a></li>
                             <li><a href="#"><i class="fa fa-envelope-o"></i>{{ $setting['email']}}</a></li>
                         </ul>
@@ -66,7 +66,7 @@
             <!-- row -->
             <div class="row">
                 <div class="col-md-12 text-center">
-                  
+
                     <span class="copyright">
 
                         <b></b>System Design & Developed by: </b> <a href="https://www.facebook.com/dipto.error.404" target="_blank"><b class="text-primary">Dipto </b></a> & <a href="https://www.facebook.com/annanna.roy" target="_blank"><b class="text-primary"> Anannya</b></a>
